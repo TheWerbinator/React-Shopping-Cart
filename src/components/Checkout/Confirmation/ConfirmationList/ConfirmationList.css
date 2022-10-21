@@ -1,0 +1,39 @@
+.confirmation-img {
+  margin: 20px auto;
+  width: 10%;
+  text-align: center;
+}
+
+.confirmation-img img{
+  width: 100%;
+}
+
+.confirmation-list h3 {
+  text-align: center;
+  margin: auto;
+}
+
+.confirmation-list p {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.confirmation-list .track-btn {
+  width: 60%;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+.confirmation-list .back-to-home {
+  width: 50%;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px;
+}

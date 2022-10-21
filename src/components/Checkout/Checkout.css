@@ -1,0 +1,13 @@
+h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+.login-buttons {
+  margin: auto;
+  width: 20%;
+}

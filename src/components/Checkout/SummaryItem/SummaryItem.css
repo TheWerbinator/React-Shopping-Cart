@@ -1,0 +1,13 @@
+.summary-item h2 {
+  text-align: right;
+}
+
+.cart-math {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.cart-total {
+  font-weight: 700;
+}

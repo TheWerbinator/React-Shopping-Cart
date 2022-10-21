@@ -1,0 +1,37 @@
+.form-wrapper {
+  display: block;
+  width: 40%;
+}
+
+form {
+  display: block;
+  width: 100%;
+}
+
+form label{
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+hr {
+  margin: auto;
+}
+
+.btn-wrapper input[type='submit'] {
+  background: #e43c2a;
+  border: 1px solid #e43c2a;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  display: block;
+  width: 90%;
+}
+
+.payment-error label > input {
+  color: black;
+  background-color: grey;
+  border: none;
+}

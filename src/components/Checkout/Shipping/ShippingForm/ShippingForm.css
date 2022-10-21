@@ -1,0 +1,47 @@
+.shipping-fields {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label > input,
+label > select {
+  margin: 10px;
+  text-align: left;
+}
+
+.selects-1 select, 
+.selects-2 select {
+  width: 20%;
+}
+
+.selects-1 label > input{
+  width: 15%
+}
+
+.phone {
+  width: 20%;
+}
+
+.shipping-method {
+  display: flex;
+}
+
+.shipping-btn {
+  border: 0px solid black;
+  border-radius: 0;
+  width: 80%;
+  height: 40px;
+  margin: 20px auto;
+}
+
+.shipping-btn.proceed-error {
+  background: grey;
+  color: red;
+  border: none;
+}
+
+.shipping-error {
+  display: inline;
+  color: red;
+}

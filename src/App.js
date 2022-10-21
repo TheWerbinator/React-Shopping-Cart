@@ -1,11 +1,11 @@
 import './App.css';
-import Form from './components/Form/Form';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Form />
+        <Checkout />
       </header>
     </div>
   );

@@ -1,0 +1,66 @@
+.confirmation-parts {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.confirmation-parts .confirmation-list {
+  height: 100%;
+  margin: 150px 0px auto;
+}
+
+.confirmation-parts .list,
+.confirmation-parts .summary {
+  width: 50%;
+}
+
+.shipping-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.shipping-mode {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.shipping-mode h4 {
+  margin-right: 20px;
+}
+
+.payment-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.payment-mode {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.payment-mode img{
+  width: 40px;
+}
+
+.payment-mode p {
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.main-image {
+  width: 100px;
+}
+
+.products-in-bag{
+  display: none;
+}

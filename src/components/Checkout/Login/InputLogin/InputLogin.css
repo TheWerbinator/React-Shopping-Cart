@@ -1,0 +1,27 @@
+.input-root-login {
+  border: 1px solid lightgrey;
+  padding: 10px;
+  line-height: 1.2;
+  width: 90%;
+  margin: 10px;
+}
+
+.error-login {
+  color: red;
+  font-size: 14px;
+  display: block;
+  position: absolute;
+  left: 300px;
+  bottom: 20px;
+}
+
+.red-alert {
+  border: 1px solid red; 
+}
+
+.btn-wrapper > p {
+  display: block;
+  text-align: left;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}

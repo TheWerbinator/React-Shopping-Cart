@@ -1,0 +1,61 @@
+form {
+  margin: auto;
+  text-align: center;
+}
+
+input[type='submit'] {
+  background: #e43c2a;
+  border: 1px solid #e43c2a;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1877f2;
+  border: 1px solid #1877f2;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0;
+  margin: 10px auto;
+  padding: 10px;
+  width: 95%;
+}
+
+.fblogo {
+  position: relative;
+  bottom: 3px;
+  width: 30px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.signin-divider {
+  display: flex;
+  align-items: center;
+}
+
+.signin-divider p {
+  font-size: 12px;
+  margin: 0 5px;
+  padding: 0;
+}
+
+.signin-divider hr {
+  width: 38%;
+}
+
+.submit-btn {
+  margin: auto;
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+}

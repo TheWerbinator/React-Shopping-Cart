@@ -1,0 +1,84 @@
+.auth-body input[type='submit'] {
+  background: #e43c2a;
+  border: 1px solid #e43c2a;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0;
+  text-align: center;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1877f2;
+  border: 1px solid #1877f2;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0;
+  margin: 10px auto;
+  padding: 10px;
+  width: 95%;
+}
+
+.close {
+  position: relative;
+  left: 850px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.close img {
+  width: 100%;
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+.auth-body {
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.auth-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+}
+
+.auth-type p {
+  margin-right: 10px;
+  padding: 0;
+}
+
+.auth-type .auth-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}
+
+.selected {
+  color: red;
+}
+
+.submit-button {
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+}
+
+.auth-btn.active{
+  background-color: black;
+  color: white;
+}
