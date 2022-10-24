@@ -10,8 +10,8 @@ class Shipping extends React.Component {
     error: false
   }
 
-  handleBackButton = () => {
-    this.props.route(0)
+  handleBackButton = (route) => {
+    this.props.route(route)
     this.setState({error: false})
   }
 
@@ -26,7 +26,7 @@ class Shipping extends React.Component {
   handleAddAddress = (e) => {
     e.preventDefault();
     console.log(e.target.value);
-    this.state.error === false && this.props.route(1)
+    this.state.error === false && this.props.route(3)
   }
 
   render() {
@@ -35,7 +35,8 @@ class Shipping extends React.Component {
       <div className="cart">
         <div className="cart-header">
           <CheckoutBanner 
-            back={this.handleBackButton}/>
+            back={this.handleBackButton}
+            route={this.props.currentPlace}/>
         </div>
 
         <form className="shipping" onSubmit={this.handleAddAddress}>

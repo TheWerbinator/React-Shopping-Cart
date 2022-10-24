@@ -26,7 +26,7 @@ class InputLogin extends React.Component {
     this.props.errormessage != null && this.addErrorClass();
 
     const handlePassType = () => {
-      this.props.handlepasstype()
+      this.props.handlePassType()
     }
      
     return(

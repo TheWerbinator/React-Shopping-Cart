@@ -36,26 +36,15 @@ class Checkout extends React.Component {
     total: products[0].total + products[1].total + products[2].total,
     empty: false,
     lastFour: '',
-    cardType: 'VISA'
-  }
-
-  goToPreviousRoute = () => {
-    const { checkoutRouteIndex } = this.state;
-    if(checkoutRouteIndex > 0) {
-      this.setState({ checkoutRouteIndex: checkoutRouteIndex - 1})
-    }
-  }
-
-  goToNextRoute = () => {
-    const { checkoutRouteIndex } = this.state;
-    if(checkoutRouteIndex !== checkoutRoutes.length - 1) {
-      this.setState({ checkoutRouteIndex: checkoutRouteIndex + 1})
-    }
+    cardType: 'VISA',
+    customerEmails: [
+      {email: 'jon@jon.com',
+       password: 'asdf123!'}
+    ]
   }
 
   handleRouteChange = (change) => {
-    change > 0 ? this.goToNextRoute() 
-    : this.goToPreviousRoute()
+    this.setState({checkoutRouteIndex: change})
   }
   
   handleAuth = (open) => {
@@ -118,6 +107,13 @@ class Checkout extends React.Component {
     this.setState({cardType: type})
   }
 
+  handleAddAccount = (email, password) => {
+    let newAccount = this.state.customerEmails.map()
+    console.log(newAccount);
+
+    newAccount.push()
+  }
+
   render() {
     const checkoutRoute = checkoutRoutes[this.state.checkoutRouteIndex];
 
@@ -144,7 +140,8 @@ class Checkout extends React.Component {
           {this.state.openAuth ? 
           <Login 
             handleLoggedIn={this.handleLoggedIn} 
-            handleAuth={this.handleAuth}/>
+            handleAuth={this.handleAuth}
+            existingAccounts={this.state.customerEmails}/>
           : checkoutRoute === 'cart' && 
           <Cart 
             products={products} 
@@ -170,7 +167,8 @@ class Checkout extends React.Component {
             shipping={this.state.shipping}
             discount={this.state.discount}
             handleShipping={this.handleShipping}  
-            total={this.state.total}/>}
+            total={this.state.total}
+            currentPlace={this.state.checkoutRouteIndex}/>}
           {checkoutRoute === 'payment' && 
           <Payment 
             products={products} 
@@ -180,7 +178,8 @@ class Checkout extends React.Component {
             discount={this.state.discount}
             total={this.state.total}
             confirmationInfo={this.confirmationInfo}
-            handleCardType={this.handleCardType}/>}
+            handleCardType={this.handleCardType}
+            currentPlace={this.state.checkoutRouteIndex}/>}
           {checkoutRoute === 'confirmation' && 
           <Confirmation 
             products={products} 
@@ -189,7 +188,8 @@ class Checkout extends React.Component {
             discount={this.state.discount}
             total={this.state.total}
             lastFour={this.state.lastFour}
-            cardType={this.state.cardType}/>}
+            cardType={this.state.cardType}
+            currentPlace={this.state.checkoutRouteIndex}/>}
         </div>
 
       </div>

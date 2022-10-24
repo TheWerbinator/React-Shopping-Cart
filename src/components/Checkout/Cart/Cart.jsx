@@ -32,7 +32,7 @@ class Cart extends React.Component {
       this.props.handleAuth(1)
     }
     if (this.props.loggedIn === true && this.props.empty !== true){
-      this.props.route(1)
+      this.props.route(2)
     }
   }
 

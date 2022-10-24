@@ -77,6 +77,7 @@ class ShippingForm extends React.Component {
           </label>
           <label>Country
             <select name="country" id="country" required>
+              <option value="" selected></option>
               <option value="US">US</option>
             </select>
           </label>
@@ -84,6 +85,7 @@ class ShippingForm extends React.Component {
         <div className="selects-2">
           <label>City
             <select name="city" id="city" required>
+              <option value="" selected></option>
               <option value="Cedar City">Cedar City</option>
               <option value="Salt Lake City">Salt Lake City</option>
               <option value="Orem">Orem</option>
@@ -92,6 +94,7 @@ class ShippingForm extends React.Component {
           </label>
           <label>State
             <select name="state" id="state" required>
+              <option value="" selected></option>
               <option value="UT">UT</option>
             </select>
           </label>

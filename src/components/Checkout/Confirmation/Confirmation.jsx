@@ -1,5 +1,6 @@
 import React from "react";
 import './Confirmation.css';
+import CheckoutBanner from '../CheckoutBanner/CheckoutBanner'
 import ConfirmationList from './ConfirmationList/ConfirmationList'
 import SummaryItem from "../SummaryItem/SummaryItem";
 import VISAlogo from './logoAssets/visa.png'
@@ -39,6 +40,11 @@ class Confirmation extends React.Component {
 
     return (
       <div className="cart">
+        <div className="cart-header">
+          <CheckoutBanner 
+            back={this.handleBackButton}
+            route={this.props.currentPlace}/>
+        </div>
         <div className="confirmation-parts">
           <div className="list">
             <h2>Confirmation</h2>

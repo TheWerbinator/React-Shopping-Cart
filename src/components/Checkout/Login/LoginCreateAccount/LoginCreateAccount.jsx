@@ -23,7 +23,8 @@ class CreateAccount extends React.Component {
     authData: INIT_AUTH,
     error: {},
     maxLength: 30,
-    type: 'password'
+    type: 'password',
+    userExists: false
   }
 
   handleValidations = (name, value) => {
@@ -32,6 +33,8 @@ class CreateAccount extends React.Component {
       case 'email':
         errorText = emailValidation(value);
         this.setState((prevState) => ({ error: {...prevState.error, emailError: errorText }}));
+        !this.props.existingAccounts.find((item) => item.email===value)
+          ? this.setState({ userExists: false}) : this.setState({ userExists: true})
         break;
       case 'password':
         errorText = passwordValidation(value);
@@ -82,15 +85,23 @@ class CreateAccount extends React.Component {
       if (!authData[val].length) {
         errorValue = { ...errorValue, [`${val}Error`]: 'Required' };
         isError = true;
+        console.log('Error on required');
         this.setState({ error: errorValue });
+      } else if (this.state.userExists === true) {
+        errorValue = { ...errorValue, emailError: 'User already exists' };
+        isError = true;
+        console.log('Error on userExists check');
       }
-    });
+    })
+    this.setState({ error: errorValue });
     return isError;
   }
 
   handleAddData = (e) => {
+    console.log('Submit Button Clicked');
     e.preventDefault();
     const errorCheck = this.checkErrorBeforeSave();
+    console.log(errorCheck);
     if (!errorCheck) {
       this.setState({
         authData: INIT_AUTH,
@@ -132,7 +143,7 @@ class CreateAccount extends React.Component {
               maxLength={maxLength}
               name={item.name}
               onBlur={this.handleBlur}
-              handlepasstype={this.handlePassType}
+              handlePassType={this.handlePassType}
               error={error}
               errormessage={
                 (error

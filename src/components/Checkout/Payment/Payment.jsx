@@ -9,8 +9,8 @@ class Payment extends React.Component {
     error: false
   }
 
-  handleBackButton = () => {
-    this.props.route(0)
+  handleBackButton = (route) => {
+    this.props.route(route)
     this.setState({error: false})
   }
 
@@ -36,7 +36,8 @@ class Payment extends React.Component {
       <div className="cart">
         <div className="cart-header">
           <CheckoutBanner 
-            back={this.handleBackButton}/>
+            back={this.handleBackButton}
+            route={this.props.currentPlace}/>
         </div>
 
         <div className="shipping">

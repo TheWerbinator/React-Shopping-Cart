@@ -131,7 +131,7 @@ class PaymentForm extends React.Component {
         cardData: INIT_CARD,
         cardType: null,
       });
-      this.props.route(1)
+      this.props.route(4)
     }
   }
 

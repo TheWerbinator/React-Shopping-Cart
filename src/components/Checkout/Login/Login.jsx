@@ -35,8 +35,13 @@ class Login extends React.Component {
           <button className={signinClass} onClick={() => this.handleAuthType(0)}>Sign In</button>
           <button className={createClass} onClick={() => this.handleAuthType(1)}>Create Account</button>
         </div>
-        {this.state.loginType === 'Sign In' ? <SignIn handleLoggedIn={this.handleLoggedIn}/> 
-        : <CreateAccount handleLoggedIn={this.handleLoggedIn}/>}
+        {this.state.loginType === 'Sign In' 
+        ? <SignIn 
+            handleLoggedIn={this.handleLoggedIn}
+            existingAccounts={this.props.existingAccounts}/> 
+        : <CreateAccount 
+            handleLoggedIn={this.handleLoggedIn}
+            existingAccounts={this.props.existingAccounts}/>}
         
       </div>
     )

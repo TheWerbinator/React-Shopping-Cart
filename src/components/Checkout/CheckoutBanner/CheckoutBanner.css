@@ -1,5 +1,22 @@
 .banner {
+  width: 100%;
+}
+
+.banner-button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.banner-button > button {
   text-align: left;
   border: 0px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  width: 20%;
+}
+
+.banner-button .selected-banner {
   background-color: blue;
+  color: white;
 }

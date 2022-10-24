@@ -3,7 +3,6 @@ import InputLogin from "../InputLogin/InputLogin";
 import './LoginSignIn.css';
 import { 
   emailValidation,
-  passwordValidation, 
 } from "../loginValidations";
 
 const INIT_AUTH = {
@@ -16,7 +15,11 @@ class SignIn extends React.Component {
     authData: INIT_AUTH,
     error: {},
     maxLength: 30,
-    type: 'password'
+    type: 'password',
+    userExists: true,
+    passwordMatches: false,
+    emailInQuestion: '',
+    passwordInQuestion: ''
   }
 
   handleValidations = (name, value) => {
@@ -25,10 +28,15 @@ class SignIn extends React.Component {
       case 'email':
         errorText = emailValidation(value);
         this.setState((prevState) => ({ error: {...prevState.error, emailError: errorText }}));
+        !this.props.existingAccounts.find((item) => item.email===value)
+          ? this.setState({ userExists: false}) : this.setState({ userExists: true})
+        this.setState({emailInQuestion: value})
+        const userIndex = this.props.existingAccounts.findIndex((item) => item.email===value)
+        this.setState({passwordInQuestion: this.props.existingAccounts[userIndex].password})
         break;
       case 'password':
-        errorText = passwordValidation(value);
-        this.setState((prevState) => ({ error: {...prevState.error, passwordError: errorText }}));
+        this.state.passwordInQuestion !== value
+          ? this.setState({ passwordMatches: false}) : this.setState({ passwordMatches: true})
         break;
         
       default: 
@@ -49,7 +57,6 @@ class SignIn extends React.Component {
 
   checkErrorBeforeSave = () => {
     const { authData } = this.state;
-    console.log(authData);
     const { error } = this.state
     let errorValue = error;
     let isError = false;
@@ -59,9 +66,19 @@ class SignIn extends React.Component {
         errorValue = { ...errorValue, [`${val}Error`]: 'Required' };
         isError = true;
         this.setState({ error: errorValue });
+      } else if (this.state.userExists === false) {
+        errorValue = { ...errorValue, emailError: 'User does not exist' };
+        isError = true;
+      } else if (this.state.passwordMatches === false) {
+        errorValue = { ...errorValue, passwordError: 'Password incorrect for this email' };
+        isError = true;
+      } else {
+        this.setState({error: {}}, console.log())
+        isError = false;
       }
     })
     this.setState({ error: errorValue });
+    console.log(isError);
     return isError;
   }
 
@@ -69,10 +86,10 @@ class SignIn extends React.Component {
     e.preventDefault();
     const errorCheck = this.checkErrorBeforeSave();
     if (errorCheck === false) {
+      this.props.handleLoggedIn(this.state.authData.email, this.state.authData.password)
       this.setState({
         authData: INIT_AUTH,
       });
-      this.props.handleLoggedIn()
     }
   }
 
@@ -105,7 +122,7 @@ class SignIn extends React.Component {
               maxLength={maxLength}
               name={item.name}
               onBlur={this.handleBlur}
-              handlepasstype={this.handlePassType}
+              handlePassType={this.handlePassType}
               error={error}
               errormessage={
                 (error
@@ -117,7 +134,6 @@ class SignIn extends React.Component {
             />
           )): null}
           <div className="btn-wrapper">
-            <p>Passwords must have a letter, number, and special character - !@#$%</p>
             <InputLogin type="submit" value="Sign In"/>
           </div>
         </form>
