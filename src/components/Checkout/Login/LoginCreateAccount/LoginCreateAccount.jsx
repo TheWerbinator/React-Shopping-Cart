@@ -7,7 +7,7 @@ import {
   onlyTextValidation,
   zipValidation,
 } from "../loginValidations";
-import fblogo from '../fblogo.png';
+import FBlogo from '../fblogo.png';
 
 const INIT_AUTH = {
   email: '',
@@ -162,7 +162,7 @@ class CreateAccount extends React.Component {
               <p>or</p>
               <hr />
             </div>
-            <button><img className="fblogo" src={fblogo} alt="facebook logo"/>Sign Up with Facebook</button>
+            <button><img className="fblogo" src={FBlogo} alt="facebook logo"/>Sign Up with Facebook</button>
           </div>
         </form>
       </div>
